@@ -32,16 +32,22 @@ echo $SHELL_COLOUR
 SHELL_COLOUR="$SHELL_VARIANT $SHELL_COLOUR"
 echo $SHELL_COLOUR
 
-# ENVIRONMENT VARIABLES:
-# ======================
+# EXPORTING VARIABLES:
+# ====================
 #
 # Ordinary SHELL VARIABLES are only defined for the CURRENTLY
 # EXECUTING PROCESS i.e. the SHELL utility. To make the shell
 # variable available to SUBPROCESSES (i.e. utilities that are
 # launched by the shell, like the DYNAMIC LINKER) the variable
 # must be EXPORTED to the ENVIRONMENT, "promoting" them to the
-# STATUS of ENVIRONMENT VARIABLES. This is achieved using the
+# "STATUS" of ENVIRONMENT VARIABLES. This is achieved using the
 # "export" command.
+#
+# NOTE: The "export" command does not CREATE an environment
+# variable, however it SHOULD be used to set the value of a
+# PREEXISTING ENVIRONMENT VARIABLE in order to achieve the
+# required propagation of the variable definition to any
+# subprocesses that are launched by the current shell. 
 #
 # The effect of the "export" command only persists until the
 # current terminal session is terminated.
@@ -54,3 +60,10 @@ export $SHELL_COLOUR
 # VARIABLE
 export MUREX_SHELL_COLOUR="Tyrian Purple"
 
+# ENVIRONMENT VARIABLES:
+# ======================
+#
+# To obtain a list of the ENVIRONMENT VARIABLES that are
+# CURRENTLY DEFINED use the "printenv" command
+
+printenv
