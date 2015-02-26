@@ -40,24 +40,17 @@ echo $SHELL_COLOUR
 # variable available to SUBPROCESSES (i.e. utilities that are
 # launched by the shell, like the DYNAMIC LINKER) the variable
 # must be EXPORTED to the ENVIRONMENT, "promoting" them to the
-# "STATUS" of ENVIRONMENT VARIABLES. This is achieved using the
+# STATUS of ENVIRONMENT VARIABLES. This is achieved using the
 # "export" command.
-#
-# NOTE: The "export" command does not CREATE an environment
-# variable, however it SHOULD be used to set the value of a
-# PREEXISTING ENVIRONMENT VARIABLE in order to achieve the
-# required propagation of the variable definition to any
-# subprocesses that are launched by the current shell. 
-#
-# The effect of the "export" command only persists until the
-# current terminal session is terminated.
-#
-# The "export command can be used to "promote" EXISTING shell 
-# variables
+
 export $SHELL_COLOUR
 
-# It can also be COMBINED with the DECLARATION of a NEW SHELL
-# VARIABLE
+# The effect of the "export" command only persists until the
+# current terminal session is terminated.
+
+# The "export" command can also be COMBINED with the DECLARATION
+# of a NEW SHELL VARIABLE
+
 export MUREX_SHELL_COLOUR="Tyrian Purple"
 
 # ENVIRONMENT VARIABLES:
