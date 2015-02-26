@@ -1,0 +1,56 @@
+# LECTURE 7 - SHELL VARIABLES AND ENVIRONMENT VARIABLES:
+# ======================================================
+#
+# SHELL VARIABLES:
+# ================
+#
+# DECLARE AND INITIALIZE a SHELL VARIABLE using the "="
+# OPERATOR.
+SHELL_VARIANT="Turtle"
+
+# EXTRACT the value of SHELL_VARIANT using the "$" PREFIX
+# Use the "echo" command to print the extracted value to
+# the terminal.
+echo $SHELL_VARIANT
+
+# Shell variables are mutable. To RESET a shell variable
+# simple ASSIGN A NEW VALUE to it using the "=" OPERATOR
+SHELL_VARIANT="Egg"
+echo $SHELL_VARIANT
+
+# The value of an EXISTING shell variable can FORM ALL OR
+# PART OF THE VALUE that is assigned to ANOTHER shell variable
+# OR USED TO RESET THE PREVIOUS VALUE of the EXISTING variable. 
+SHELL_VARIANT="Duck $SHELL_VARIANT"
+echo $SHELL_VARIANT
+
+# The values that are assigned to shell variables may comprise
+# MULTIPLE EXISTING shell variables, potentially including the
+# VARIABLE to which the computed value is being assigned.
+SHELL_COLOUR="Blue"
+echo $SHELL_COLOUR
+SHELL_COLOUR="$SHELL_VARIANT $SHELL_COLOUR"
+echo $SHELL_COLOUR
+
+# ENVIRONMENT VARIABLES:
+# ======================
+#
+# Ordinary SHELL VARIABLES are only defined for the CURRENTLY
+# EXECUTING PROCESS i.e. the SHELL utility. To make the shell
+# variable available to SUBPROCESSES (i.e. utilities that are
+# launched by the shell, like the DYNAMIC LINKER) the variable
+# must be EXPORTED to the ENVIRONMENT, "promoting" them to the
+# STATUS of ENVIRONMENT VARIABLES. This is achieved using the
+# "export" command.
+#
+# The effect of the "export" command only persists until the
+# current terminal session is terminated.
+#
+# The "export command can be used to "promote" EXISTING shell 
+# variables
+export $SHELL_COLOUR
+
+# It can also be COMBINED with the DECLARATION of a NEW SHELL
+# VARIABLE
+export MUREX_SHELL_COLOUR="Tyrian Purple"
+
