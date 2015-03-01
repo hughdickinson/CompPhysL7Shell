@@ -43,7 +43,7 @@ echo $SHELL_COLOUR
 # STATUS of ENVIRONMENT VARIABLES. This is achieved using the
 # "export" command.
 
-export $SHELL_COLOUR
+export SHELL_COLOUR
 
 # The effect of the "export" command only persists until the
 # current terminal session is terminated.
